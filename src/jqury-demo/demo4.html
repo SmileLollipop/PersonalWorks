@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo4</title>
+</head>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<body>
+<h1>使用DOM第2级事件模型创建事件处理器</h1>
+<div id="outer">
+    <div id="inner">
+        <img id="img" src="../../img/demo1.gif" alt="hello">
+    </div>
+</div>
+<div id="display"></div>
+<script>
+    $(function(){
+        var element=$('#img')[0];
+        element.addEventListener('click',function(event){
+            alert('hello1!')
+        },false);
+        element.addEventListener('click',function(event){
+            alert('hello2!')
+        },false);
+        element.addEventListener('click',function(event){
+            alert('hello3!')
+        },false);
+    })
+</script>
+
+</body>
+</html>

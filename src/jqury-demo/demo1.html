@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态创建一个全功能的img元素</title>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<script>
+    $('<img>',
+    {
+        src:"../../img/demo1.gif",
+        alt:'长草颜字君',
+        title:'长草颜字君',
+        click:function(){
+            alert($(this).attr('title'));
+        }
+    }).css({
+        cursor:'pointor',
+        border:'1px solid black',
+        padding:'12px 12px 20px 12px',
+        background:'#C6FAA2'
+    }).appendTo('body');
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo3</title>
+</head>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<style>
+    #inner{
+        width: 300px;
+        height: 300px;
+        background: #ffce3b;
+    }
+    #outer{
+        width: 400px;
+        height: 400px;
+        background: #2fa14e;
+    }
+</style>
+<body id="body">
+<h1>事件从源向上传播到DOM的顶部</h1>
+<div id="outer">
+    <div id="inner">
+        <img id="img" src="../../img/demo1.gif" alt="hello">
+    </div>
+</div>
+<div id="display"></div>
+<script>
+    $(function(){
+        $('*').each(function(){
+            var current=this;
+            this.onclick=function(event){
+                if(!event) event=window.event;
+                var target=(event.target)?event.target:event.srcElement;
+                var str='current:'+current.tagName+'----'+
+                        'target:'+target.id;
+                $('#display').append(str+'</br>');
+            }
+        })
+    })
+</script>
+</body>
+</html>

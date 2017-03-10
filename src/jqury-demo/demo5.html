@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo5</title>
+</head>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<body id="body">
+<h1>使用冒泡和捕获处理器跟踪事件的传播</h1>
+<div id="outer">
+    <div id="inner">
+        <img id="img" src="../../img/demo1.gif" alt="hello">
+    </div>
+</div>
+<div id="display"></div>
+<script>
+    $(function(){
+        //捕获
+        $('*').each(function(){
+            var current=this;
+            this.addEventListener('click',function(event){
+                var text="capture"+"----"+current.tagName+'---'+event.target.id;
+                $('#display').append(text+'</br>')
+            },true);
+        });
+        //冒泡
+        $('*').each(function(){
+            var current=this;
+            this.addEventListener('click',function(event){
+                var text="bubble"+"------"+current.tagName+'---'+event.target.id;
+                $('#display').append(text+'</br>')
+            },false);
+        })
+    })
+</script>
+</body>
+</html>

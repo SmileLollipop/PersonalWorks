@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-Secrets</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/css-secrets.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/css-secrets.js"></script>
+<script>
+    $(function(){
+        $('.con').fullpage({
+            anchors:['page1','page2','page3','page4','page5','page6','page7','page8','page9'],
+            menu:"#menu",
+            verticalCentered:false,
+            css3:true,
+            scrollingSpeed:1000,
+            slidesNavigation:true,
+            loopHorizontal:true,
+            continuousVertical:true
+        });
+        var timer;
+        function go(){
+            timer=setInterval(function(){
+                $.fn.fullpage.moveSlideRight();
+            }, 4000);
+        }
+//        go();
+//        $('.con').hover(function(){
+//            clearInterval(timer);
+//        },function(){
+//          go();
+//        })
+    });
+</script>
+</head>
+<body>
+<header>
+    <div class="inner">
+        <h1><img src="./img/logo.png" class="logo">
+        </h1>
+        <nav>
+            <ul id="menu">
+                <li data-menuanchor="page1" class="active" >
+                    <a href="#page1" >
+                        <p>首页</p>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page2">
+                    <a href="#page2">
+                        <p>DRY</p>
+                        <p>DRY</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page3">
+                    <a href="#page3">
+                        <p>背景&amp;边框</p>
+                        <p>背景&amp;边框</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page4">
+                    <a href="#page4">
+                        <p>形状</p>
+                        <p>形状</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page5">
+                    <a href="#page5">
+                        <p>视觉效果</p>
+                        <p>视觉效果</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page6">
+                    <a href="#page6">
+                        <p>字体</p>
+                        <p>字体</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page7">
+                    <a href="#page7">
+                        <p>用户体验</p>
+                        <p>用户体验</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page8">
+                    <a href="#page8">
+                        <p>布局</p>
+                        <p>布局</p>
+                    </a>
+                </li>
+                <li data-menuanchor="page9">
+                    <a href="#page9">
+                        <p>动画</p>
+                        <p>动画</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="con">
+    <section class="section s1">
+       <h1>CSS是一种魔法，可以让你的网页脱胎换骨，焕然一新O(∩_∩)O~</h1>
+    </section>
+    <section class="section s2">
+        <!--小背景图片-->
+        <div class="sbg">
+            <div class="sbg1"></div>
+            <div class="sbg2"></div>
+            <div class="sbg3"></div>
+        </div>
+        <div class="slide slide1">
+            <div class="codebox code21">
+                <img src="./img/code21.png" alt="">
+            </div>
+            <div class="effect effect21">
+
+                <h2>DRY<small>(Don't Repeat Yourselft)尽量减少代码重复</small></h2>
+                <button class="but">Yes!</button>
+                <button class="but ok">OK</button>
+                <button class="but cancel">Cancel</button>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="codebox code22">
+                <img src="./img/code22.png" alt="">
+            </div>
+            <div class="effect effect22">
+                <h2>inherit<small>关键字绑定到父元素的计算值</br>(对伪元素来说，则取宿主元素)
+                    </br>在创建提示框的的时候,小箭头能够自动继承</br>背景和边框的样式
+                </small></h2>
+                <lable for="name" class="lable">Your username:</lable><input type="text" id="name">
+                <div class="tip">Only letters,numbers,underscores(_)and hyphens(-)allowed!</div>
+            </div>
+        </div>
+    </section>
+    <section class="section s3">
+        <div class="slide slide1">
+            <div class="codebox code31">
+                <img src="./img/code31.png" alt="">
+            </div>
+            <div class="effect effect31">
+                <h2>半透明边框<small>(background-clip的默认值是</br>border-box,修改为padding-box就能显示</br>半透明的边框效果)</small></h2>
+                <div>
+                    Can I haz semi-tranparent borders?Pretty please?
+                </div>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="codebox code32">
+                <img src="./img/code32.png" alt="">
+            </div>
+            <div class="effect effect32">
+                <h2>多重边框<small>(box-shadow方案和outline方案)</small></h2>
+                <div></div>
+            </div>
+        </div>
+        <div class="slide slide3">
+            <div class="codebox code33">
+                <img src="./img/code33.png" alt="">
+            </div>
+            <div class="effect effect33">
+                <h2>灵活的背景定位<small>(bacground-position方案、</br>background-origin方案和calc()方案)</br>background-origin默认值为padding-box</small></h2>
+                <div>Code Pirate</div>
+            </div>
+        </div>
+        <div class="slide slide4">
+            <div class="codebox code34">
+                <img src="./img/code34.png" alt="">
+            </div>
+            <div class="effect effect34">
+                <h2>边框内圆角<small>(box-shadow、outline实现)</br>注意：投影扩张半径取圆角半径的一半</small></h2>
+                <div>I have a nice subtle inner rounding,don't I look pretty?</div>
+            </div>
+        </div>
+        <div class="slide slide5">
+            <div class="codebox code35">
+                <img src="./img/code35.png" alt="">
+            </div>
+            <div class="effect effect35">
+                <h2>条纹背景<small>(CSS线性渐变、background-size)</br></small></h2>
+                <div class="horizontal-stripes"></div>
+                <div class="vertical-stripes"></div>
+                <div class="diagonal-stripes"></div>
+                <div class="subtle-stripes"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section s4">
+        <div class="slide slide1">
+            <div class="codebox code41">
+                <img src="./img/code41.png" alt="">
+            </div>
+            <div class="effect effect41">
+                <h2>自适应的椭圆<small>(border-radius)</small></h2>
+                <div class="ellipse"></div>
+                <div class="half-ellipse-1"></div>
+                <div class="half-ellipse-2"></div>
+                <div class="half-ellipse-3"></div>
+                <div class="quarter-ellipse-1"></div>
+                <div class="quarter-ellipse-2"></div>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="codebox code42">
+                <img src="./img/code42.png" alt="">
+            </div>
+            <div class="effect effect42">
+                <h2>平行四边形<small>(CSS变形)</small></h2>
+                <!--<button><div>Click me</div></button>-->
+                <button>Click me</button>
+            </div>
+        </div>
+    </section>
+    <section class="section s5"></section>
+    <section class="section s6"></section>
+    <section class="section s7"></section>
+    <section class="section s8"></section>
+    <section class="section s9">
+        <div class="slide slide1">
+            <div class="codebox code91">
+                <img src="./img/code91.png" alt="">
+            </div>
+            <div class="effect effect91">
+                <h2>弹球动画效果</h2>
+                <div class="box">
+                    <div class="ball"></div>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="slide slide2">
+            <div class="codebox code92">
+                <img src="./img/code92.png" alt="">
+            </div>
+            <div class="effect effect92">
+                <h2>弹球动画效果</h2>
+                <div class="box">
+                    <div class="ball"></div>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<audio src="./raw/Arrietty’s Song.mp3" id="audio" autoplay loop>您的浏览器不支持</audio>
+<div class="cube animation" >
+    <div class="before">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="after">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="right">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="top">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="bottom">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <img src="./img/music.png">
+
+</div>
+<script>
+    $(function(){
+        $('.cube').on('click',function(){
+            var audio=$("#audio")[0];//jquery对象转dom对象，才能使用相关方法
+            if(audio.paused){
+                audio.play();
+                $(this).addClass('animation');
+            }else{
+                audio.pause();
+                $(this).removeClass('animation');
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>
